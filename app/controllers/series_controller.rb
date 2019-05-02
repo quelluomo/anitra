@@ -1,0 +1,5 @@
+class SeriesController < ApplicationController
+
+
+
+end
