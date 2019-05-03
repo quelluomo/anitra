@@ -1,0 +1,8 @@
+<h1><%=@anime.content %></h1>
+
+<form method="post" action="/anime/<%=@anime.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Anime">
+</form>
+
+<a href="/anime/<%=@anime.id%>/edit">Edit Anime</a>

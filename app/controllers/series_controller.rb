@@ -2,7 +2,7 @@ class SeriesController < ApplicationController
 
   get '/anime' do
     if logged_in?
-      @anime = anime.all
+      @anime = Anime.all
       erb :'anime/anime'
     else
       redirect to '/login'
@@ -33,7 +33,7 @@ class SeriesController < ApplicationController
 
   get '/anime/:id' do
     if logged_in?
-      @anime = anime.find_by(params[:id])
+      @anime = Anime.find_by(params[:id])
       erb :'/anime/show_anime'
     else
       redirect to "/login"
@@ -73,7 +73,5 @@ class SeriesController < ApplicationController
       redirect to "/login"
     end
   end
-
-
 
 end
