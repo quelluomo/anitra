@@ -1,10 +1,10 @@
-<h1>Edit Anime<%= @show.content %></h1>
+<h2>Edit Anime <br><%= @show.title %></h2>
 
 <form action="/shows/<%= @show.id %>" method="POST">
   <input type="hidden" name="_method" value="PATCH">
 
-  <input type="text" name="title" placeholder="something">
-  <input type="text" name="score" placeholder="score">
+  <input type="text" name="title" value="<%= @show.title %>">
+  <input type="text" name="score" value="<%= @show.score %>">
 
   <input type="submit" value="submit">
 </form>

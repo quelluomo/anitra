@@ -1,4 +1,8 @@
-<h1><%=@show.title %></h1>
+<P>
+<label>Title</label>
+<h2><%=@show.title %></h2>
+<label>Score</label>
+<h1><%=@show.score %></h1></p>
 
 <form method="post" action="/shows/<%=@show.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">

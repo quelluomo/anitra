@@ -10,6 +10,10 @@
     <div class="container">
       <center style="width: 100%; background-color: #fe53bb;">
       <h1 style="color:white; font-family:courier; text-align:left; padding: 1em 1em; margin=10">アニトラ anime tracker</h1>
+      <% if logged_in? %>
+      <a href="/shows/new" style="color:white">Add a Show</a><br>
+      <a href="/shows" style="color:white"> See all shows </a>
+      <% end %>
       <%= yield %>
 
 

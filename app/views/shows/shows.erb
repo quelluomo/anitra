@@ -1,6 +1,8 @@
-<h1>Welcome, <%=current_user.username %></h1>
+<h1>Welcome, <%=current_user.username.capitalize %></h1>
 
 <% Show.all.each do |show| %>
-  <p><%= show.title %>
+  <label>Title</label>
+    <p><%= show.title %><br>
+  <label>Score</label>
   <%= show.score %></p>
   <% end %>

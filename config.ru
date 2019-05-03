@@ -7,7 +7,7 @@ require './config/environment'
 use Rack::MethodOverride
 
 
-use SeriesController
+use ShowsController
 use UsersController
 
 run ApplicationController

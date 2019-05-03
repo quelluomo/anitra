@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_090728) do
+ActiveRecord::Schema.define(version: 2019_05_03_091154) do
 
   create_table "anime", force: :cascade do |t|
+    t.text "title"
+    t.integer "score"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shows", force: :cascade do |t|
     t.text "title"
     t.integer "score"
     t.integer "user_id"

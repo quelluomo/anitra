@@ -17,9 +17,9 @@ class ShowsController < ApplicationController
    end
  end
 
- post '/show' do
+ post '/shows' do
    if logged_in?
-     @show = current_user.show.new(:title => params[:title], :score => params[:score])
+     @show = current_user.shows.new(:title => params[:title], :score => params[:score])
       if params[:title] != ""
         @show.save
         redirect("/shows/#{@show.id}")
@@ -33,7 +33,7 @@ class ShowsController < ApplicationController
 
   get '/shows/:id' do
     if logged_in?
-      @show = Show.find_by(params[:id])
+      @show = Show.find_by(id: params[:id])
       erb :'/shows/show_show'
     else
       redirect to "/login"
@@ -42,7 +42,7 @@ class ShowsController < ApplicationController
 
   get '/shows/:id/edit' do
     if logged_in?
-      @show = current_user.show.find_by(params[:id])
+      @show = current_user.shows.find_by(id: params[:id])
       erb :'/shows/edit_show'
     else
       redirect to "/login"
@@ -51,7 +51,7 @@ class ShowsController < ApplicationController
 
   patch '/shows/:id' do
     if logged_in?
-      @show = current_user.show.find_by(params[:id])
+      @show = current_user.shows.find_by(id: params[:id])
       if params[:title] != ""
         @show.update(:title => params[:title], :score => params[:score])
         @show.save
@@ -66,7 +66,7 @@ class ShowsController < ApplicationController
 
   delete '/shows/:id/delete' do
     if logged_in?
-      @show = current_user.show.find_by(params[:id])
+      @show = current_user.show.find_by(id: params[:id])
       @show.delete
       redirect to "/shows"
     else
