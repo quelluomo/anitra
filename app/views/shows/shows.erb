@@ -1,6 +1,6 @@
 <h1>Welcome, <%=current_user.username %></h1>
 
-<% @user.shows.each do |show| %>
+<% Show.all.each do |show| %>
   <p><%= show.title %>
   <%= show.score %></p>
   <% end %>

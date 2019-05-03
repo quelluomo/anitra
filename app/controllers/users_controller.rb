@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :'users/create_user'
     else
-      redirect to '/anime'
+      redirect to '/shows'
     end
   end
 
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
       @user.save
       session[:user_id] = @user.id
-      redirect to '/anime'
+      redirect to '/shows'
     end
   end
 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :'users/login'
     else
-      redirect to '/anime'
+      redirect to '/shows'
     end
   end
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect "/anime"
+      redirect "/shows"
     else
       redirect '/login'
     end

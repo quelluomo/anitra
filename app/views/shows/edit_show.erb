@@ -1,0 +1,10 @@
+<h1>Edit Anime<%= @show.content %></h1>
+
+<form action="/shows/<%= @show.id %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+
+  <input type="text" name="title" placeholder="something">
+  <input type="text" name="score" placeholder="score">
+
+  <input type="submit" value="submit">
+</form>
