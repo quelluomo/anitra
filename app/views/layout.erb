@@ -1,21 +1,31 @@
 <!doctype html>
 <html>
   <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Anitra Anime Tracker</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
+    <title>Anitra Anime Tracker</title>
   </head>
   <body>
 
     <div class="container">
-      <center style="width: 100%; background-color: #fe53bb;">
-      <h1 style="color:white; font-family:courier; text-align:left; padding: 1em 1em; margin=10">アニトラ anime tracker</h1>
+      <header style="width: 100%; background-color: #08f7fe;">
+      <h1 style="width: 100%; color: #fe53bb;">アニトラ anime tracker</h1>
       <% if logged_in? %>
       <a href="/shows/new" style="color:white">Add a Show</a><br>
       <a href="/shows" style="color:white"> See all shows </a>
       <% end %>
-      <%= yield %>
+    </header>
 
+    <body style="width: 100%; background-color: #fe53bb; color: #fff;">
+      <%= yield %>
+    </body>
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
