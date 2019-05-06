@@ -1,4 +1,8 @@
-<h4>Welcome, <%=current_user.username.capitalize %></h4>
+<section class="section">
+  <h3><strong>Here are all your shows, <%=current_user.username.capitalize %></strong></h3>
+  <h4>Sort by:</h4>
+  <a class="button is-link">Name</a> <a class="button is-link">Score</a>
+</section>
 
 <% @shows.each do |show| %>
 <ul>
@@ -7,6 +11,8 @@
   <strong><%= show.score %></strong><br>
 </ul>
   <% end %>
+
+
 
   <% @show_scores.each do |show| %>
   <ul>

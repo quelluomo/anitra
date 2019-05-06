@@ -14,20 +14,24 @@
   </head>
   <body>
     <section class="section">
-      <div class="container is-fluid" style="background-color: #fe53bb;">
-        <% if logged_in? %>
-        <a href="/shows"><h1 class="title" style="color: #fff;">アニトラ anime tracker</h1></a>
-        <a href="/shows/new">Add a Show</a><br>
-        <a href="/shows"> See all shows </a>
-        <% else %>
-        <a href="/"><h1 class="title" style="color: #fff;">アニトラ anime tracker</h1></a>
-        <% end %>
+      <div class="has-background-danger">
+        <div class="container is-fluid">
+          <% if logged_in? %>
+          <a href="/shows"><h1 class="title" style="color: #fff;">アニトラ anime tracker</h1></a>
+          <a class="button is-link" href="/shows/new">Add a Show</a><br>
+          <a class="button is-link" href="/shows"> See all shows </a>
+          <% else %>
+          <a href="/"><h1 class="title" style="color: #fff;">アニトラ anime tracker</h1></a>
+          <% end %>
+        </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container is-fluid" style="background-color: #08f7fe;">
-      <%= yield %>
+      <div class="has-background-primary">
+        <div class="container is-fluid">
+        <%= yield %>
+        </div>
       </div>
     </section>
   </body>
