@@ -1,23 +1,26 @@
 <section class="section">
-  <h3><strong>Here are all your shows, <%=current_user.username.capitalize %></strong></h3>
-  <h4>Sort by:</h4>
-  <a class="button is-link">Name</a> <a class="button is-link">Score</a>
+  <div class="columns has-background-white-ter">
+    <div class="column">
+      <h3 class="is-size-5">All your show sorted by <strong>name</strong>, <%=current_user.username.capitalize %></h3><br>
+        <p><% @shows.each do |show| %>
+        <ul>
+          <li><strong><%= show.title %></strong></li>
+          <label>Score:</label>
+          <strong><%= show.score %></strong><br>
+        </ul></p>
+        <% end %>
+    </div>
+
+    <div class="column">
+      <h3 class="is-size-5">All your show sorted by <strong>score</strong>, <%=current_user.username.capitalize %></strong></h3><br>
+        <p><% @show_scores.each do |show| %>
+        <ul>
+          <li><strong><%= show.title %></strong></li>
+          <label>Score:</label>
+          <strong><%= show.score %></strong><br>
+        </ul></p>
+          <% end %>
+    </div>
+
+  </div>
 </section>
-
-<% @shows.each do |show| %>
-<ul>
-    <li><strong><%= show.title %></strong></li>
-  <label>Score:</label>
-  <strong><%= show.score %></strong><br>
-</ul>
-  <% end %>
-
-
-
-  <% @show_scores.each do |show| %>
-  <ul>
-      <li><strong><%= show.title %></strong></li>
-    <label>Score:</label>
-    <strong><%= show.score %></strong><br>
-  </ul>
-    <% end %>
