@@ -2,8 +2,8 @@ class ShowsController < ApplicationController
 
   get '/shows' do
     if logged_in?
-      @show = Show.all
-      @sorted_shows = Show.all.sort
+      @shows = Show.order(:title)
+      @show_scores = Show.order(score: :desc)
       erb :'shows/shows'
     else
       redirect to '/login'

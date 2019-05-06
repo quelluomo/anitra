@@ -1,9 +1,17 @@
 <h4>Welcome, <%=current_user.username.capitalize %></h4>
 
-<% Show.all.each do |show| %>
+<% @shows.each do |show| %>
 <ul>
     <li><strong><%= show.title %></strong></li>
   <label>Score:</label>
   <strong><%= show.score %></strong><br>
 </ul>
   <% end %>
+
+  <% @show_scores.each do |show| %>
+  <ul>
+      <li><strong><%= show.title %></strong></li>
+    <label>Score:</label>
+    <strong><%= show.score %></strong><br>
+  </ul>
+    <% end %>
