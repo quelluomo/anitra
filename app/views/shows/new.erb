@@ -1,7 +1,18 @@
-<h3>Write something!</h3>
-<form action="/shows" method="POST">
-  <input type="text" name="title" placeholder="something">
-  <input type="text" name="score" placeholder="score">
 
-  <input type="submit" value="submit">
-</form>
+
+<h3>Add an anime to your collection</h3>
+  <div class="container">
+    <form action="/shows" method="POST">
+    <div class="field">
+      <div class="control">
+        <input class="input is-primary" type="text" name="title" placeholder="Title">
+      </div>
+    </div>
+    <div class="field">
+      <div class="control">
+        <input class="input is-info" type="text" name="score" placeholder="Score">
+      </div>
+    </div>
+    <input class="button is-primary" type="submit" value="submit">
+    </form>
+  </div>
