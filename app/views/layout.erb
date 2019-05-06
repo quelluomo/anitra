@@ -15,10 +15,12 @@
   <body>
     <section class="section">
       <div class="container is-fluid" style="background-color: #fe53bb;">
-        <h1 class="title" style="color: #fff;">アニトラ anime tracker</h1>
         <% if logged_in? %>
+        <a href="/shows"><h1 class="title" style="color: #fff;">アニトラ anime tracker</h1></a>
         <a href="/shows/new">Add a Show</a><br>
         <a href="/shows"> See all shows </a>
+        <% else %>
+        <a href="/"><h1 class="title" style="color: #fff;">アニトラ anime tracker</h1></a>
         <% end %>
       </div>
     </section>
