@@ -1,6 +1,6 @@
 <section class="section">
-  <div class="columns has-background-white-ter">
-    <div class="column">
+  <div class="columns is-mobile ">
+    <div class="column has-background-white-ter">
       <h3 class="is-size-5">All your show sorted by <strong>name</strong>, <%=current_user.username.capitalize %></h3><br>
         <p><% @shows.each do |show| %>
         <ul>
@@ -11,7 +11,7 @@
         <% end %>
     </div>
 
-    <div class="column">
+    <div class="column has-background-white-ter">
       <h3 class="is-size-5">All your show sorted by <strong>score</strong>, <%=current_user.username.capitalize %></strong></h3><br>
         <p><% @show_scores.each do |show| %>
         <ul>

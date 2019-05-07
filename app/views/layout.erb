@@ -14,10 +14,29 @@
       <div class="has-background-danger">
         <div class="container is-fluid">
           <% if logged_in? %>
-            <a href="/shows"><h1 class="title has-text-centered" style="color: #fff;">アニトラ anime tracker</h1></a>
-          <nav class="level">
-            <p><a class="button is-link" href="/shows/new">Add a Show</a></p>
-            <p><a class="button is-link" href="/shows"> See all shows </a></p>
+
+          <nav class="navbar">
+
+            <div class="navbar-brand">
+              <a href="/shows"><h1 class="title has-text-centered navbar-item">アニトラ anime tracker</h1></a>
+            </div>
+            <div class="navbar-menu">
+              <div class="navbar-start">
+                <a class="button is-link navbar-item" href="/shows/new">Add a Show</a>
+                <a class="button is-link" href="/shows"> See all shows </a>
+              </div>
+            </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="buttons">
+                  <a class="button is-warning" href="/logout">
+                    <strong>Log Out</strong>
+                  </a>
+                </div>
+              </div>
+            </div>
+
           </nav>
           <% else %>
           <a href="/"><h1 class="title has-text-centered" style="color: #fff;">アニトラ anime tracker</h1></a>
