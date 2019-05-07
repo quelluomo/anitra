@@ -17,3 +17,10 @@
   <input class="button has-background-success" type="submit" value="Edit">
   </form>
 </div>
+
+
+<form action="/shows/<%= @show.id %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+  <input id="watched" type="hidden" name="status" value="watched">
+  <input class="button has-background-danger" type="submit" value="Watched">
+</form>

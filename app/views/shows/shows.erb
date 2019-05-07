@@ -5,7 +5,14 @@
         <h3 class="is-size-5">All your show sorted by <strong>name</strong>, <%=current_user.username.capitalize %></h3><br>
           <p><% @shows.each do |show| %>
           <ul>
-            <li><a href="/shows/<%= show.id %>"><strong><%= show.title %></strong></a></li>
+            <li><a href="/shows/<%= show.id %>"><strong><%= show.title %></strong></a>
+
+                <a class="button is-small">Watched</a>
+
+              <a class="button is-small" href="/progress">In Progress</a>
+              <a class="button is-small" href="/wishlist">In Wishlist</a>
+            </li>
+
             <label>Score:</label>
             <strong><%= show.score %></strong><br>
           </ul></p>
