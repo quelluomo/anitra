@@ -8,50 +8,63 @@
     <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
   </head>
-
   <body>
     <section class="section">
-      <div class="has-background-danger">
-        <div class="container is-fluid">
-          <% if logged_in? %>
+      <% if logged_in? %>
+      <nav class="navbar is-danger">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/shows">
+            <strong>アニトラ anime tracker</strong>
+          </a>
+        </div>
 
-          <nav class="navbar">
+        <div class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="/shows/new">
+              Add a Show
+            </a>
 
-            <div class="navbar-brand">
-              <a href="/shows"><h1 class="title has-text-centered navbar-item">アニトラ anime tracker</h1></a>
-            </div>
-            <div class="navbar-menu">
-              <div class="navbar-start">
-                <a class="button is-link navbar-item" href="/shows/new">Add a Show</a>
-                <a class="button is-link" href="/shows"> See all shows </a>
+            <a class="navbar-item" href="/shows">
+              See all Shows
+            </a>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary" href="/logout">
+                  <strong>Log Out</strong>
+                </a>
               </div>
             </div>
+          </div>
+        </nav>
+      <% else %>
+      <nav class="navbar is-danger">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/shows">
+            <strong>アニトラ anime tracker</strong>
+          </a>
+        </div>
 
-            <div class="navbar-end">
-              <div class="navbar-item">
-                <div class="buttons">
-                  <a class="button is-warning" href="/logout">
-                    <strong>Log Out</strong>
-                  </a>
-                </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary" href="/login">
+                  <strong>Log In</strong>
+                </a>
               </div>
             </div>
-
-          </nav>
-          <% else %>
-          <a href="/"><h1 class="title has-text-centered" style="color: #fff;">アニトラ anime tracker</h1></a>
-          <% end %>
+          </div>
+        </nav>
+      <% end %>
         </div>
       </div>
 
-      <div class="has-background-primary">
-        <div class="container is-fluid">
+      <section class="has-background-primary">
         <%= yield %>
-        </div>
-      </div>
+      </section>
     </section>
   </body>
 
-
-  </body>
 </html>

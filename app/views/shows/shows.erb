@@ -1,26 +1,27 @@
 <section class="section">
-  <div class="columns is-mobile ">
-    <div class="column has-background-white-ter">
-      <h3 class="is-size-5">All your show sorted by <strong>name</strong>, <%=current_user.username.capitalize %></h3><br>
-        <p><% @shows.each do |show| %>
-        <ul>
-          <li><strong><%= show.title %></strong></li>
-          <label>Score:</label>
-          <strong><%= show.score %></strong><br>
-        </ul></p>
-        <% end %>
-    </div>
-
-    <div class="column has-background-white-ter">
-      <h3 class="is-size-5">All your show sorted by <strong>score</strong>, <%=current_user.username.capitalize %></strong></h3><br>
-        <p><% @show_scores.each do |show| %>
-        <ul>
-          <li><strong><%= show.title %></strong></li>
-          <label>Score:</label>
-          <strong><%= show.score %></strong><br>
-        </ul></p>
+  <div class="columns is-mobile">
+    <div class="column is-mobile">
+      <div class="column has-background-white-ter">
+        <h3 class="is-size-5">All your show sorted by <strong>name</strong>, <%=current_user.username.capitalize %></h3><br>
+          <p><% @shows.each do |show| %>
+          <ul>
+            <li><a href="/shows/<%= show.id %>"><strong><%= show.title %></strong></a></li>
+            <label>Score:</label>
+            <strong><%= show.score %></strong><br>
+          </ul></p>
           <% end %>
-    </div>
-
+      </div>
+  </div>
+  <div class="column is-mobile">
+      <div class="column has-background-white-ter">
+        <h3 class="is-size-5">All your show sorted by <strong>score</strong>, <%=current_user.username.capitalize %></strong></h3><br>
+          <p><% @show_scores.each do |show| %>
+          <ul>
+            <li><a href="/shows/<%= show.id %>"><strong><%= show.title %></strong></a></li>
+            <label>Score:</label>
+            <strong><%= show.score %></strong><br>
+          </ul></p>
+            <% end %>
+      </div>
   </div>
 </section>
