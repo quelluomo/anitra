@@ -1,12 +1,23 @@
-<P>
-<label>Title</label>
-<h2><%=@show.title %></h2>
-<label>Score</label>
-<h1><%=@show.score %></h1></p>
+<section class="section">
+  <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+      <div class="column has-background-white-ter">
+        <P>
+        <strong><%=@show.title %></strong><br>
+        <label>Score:</label>
+        <strong><%=@show.score %></strong></p>
+      </div>
+      <br>
+      <div>
+        <div class="buttons">
 
-<form method="post" action="/shows/<%=@show.id%>/delete">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Anime">
-</form>
+          <a class="button has-background-warning" href="/shows/<%=@show.id%>/edit">Edit Anime</a>
 
-<a href="/shows/<%=@show.id%>/edit">Edit Anime</a>
+          <form method="post" action="/shows/<%=@show.id%>/delete">
+            <input id="hidden" type="hidden" name="_method" value="DELETE">
+            <input class="button has-background-danger" type="submit" value="Delete Anime">
+          </form>
+
+        </div>
+      </div>
+
+</section>

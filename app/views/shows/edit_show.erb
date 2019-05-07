@@ -1,10 +1,19 @@
-<h2>Edit Anime <br><%= @show.title %></h2>
 
-<form action="/shows/<%= @show.id %>" method="POST">
-  <input type="hidden" name="_method" value="PATCH">
 
-  <input type="text" name="title" value="<%= @show.title %>">
-  <input type="text" name="score" value="<%= @show.score %>">
-
-  <input type="submit" value="submit">
-</form>
+<div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+  <h3 class="is-size-5">Edit Anime</h3><br>
+  <form action="/shows/<%= @show.id %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+  <div class="field">
+    <div class="control">
+      <input class="input is-primary" type="text" name="title" value="<%= @show.title %>">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input class="input is-info" type="text" name="score" value="<%= @show.score %>">
+    </div>
+  </div>
+  <input class="button has-background-success" type="submit" value="Edit">
+  </form>
+</div>
