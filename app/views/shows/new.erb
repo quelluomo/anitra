@@ -13,14 +13,17 @@
         <input class="input is-info" type="text" name="score" placeholder="Score">
       </div>
       <div class="field">
-      <div class="control">
         <br><h4 class="is-size-6"><strong>Status:</strong></h3>
-          <input class="input button is-info is-small has-background-success" type="radio" name="status" value="watched">
-          <input class="input button is-info is-small is-inverted has-background-warning" type="radio" name="status" value="progress">
-          <input class="input button is-info is-small is-inverted has-background-danger" type="radio" name="status" value="wishlisted">
-          <input class="input button is-info is-small has-background-dark" type="button" name="radio" value="dropped">
+        <div class="control">
+
+          <label class="radio">
+            <label><input class="radio" type="radio" name="status" value="watched"> Watched</label><br>
+            <label><input class="radio" type="radio" name="status" value="progress"> In Progress</label><br>
+            <label><input class="radio" type="radio" name="status" value="wishlisted"> In Wishlist</label><br>
+            <label><input class="radio" type="radio" name="status" value="dropped"> Dropped</label><br>
+          </label>
+        </div>
       </div>
-    </div>
     <input class="button has-background-success" type="submit" value="Add">
     </form>
   </div>
