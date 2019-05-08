@@ -1,16 +1,38 @@
-<p>アニトラ anime tracker</p>
-<p>Please sign in or signup below:</p>
 
-<nav>
+<section class="section">
+
   <% if logged_in? %>
+  <nav class="navbar is-danger">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/shows">
+        <strong>アニトラ anime tracker</strong>
+      </a>
+    </div>
 
-    <a href="/shows/new"> Add an anime </a>
-    <a href="/logout"> Log Out </a>
-    <p>Welcome, <%=current_user.username %></p>
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/shows/new">
+          Add a Show
+        </a>
 
+        <a class="navbar-item" href="/shows">
+          See all Shows
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" href="/logout">
+              <strong>Log Out</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
   <% else %>
-    <a href="/signup">Sign Up</a>
-    <a href="/login"> Sign In </a>
-  <%end %>
+  <h3 class="is-size-4"><strong>Welcome to アニトラ anime tracker</strong></h3><br>
+  <h3 class="is-size-5"><strong>Please <a href="/login">log in</a> or <a href="/signup">sign up</a> to continue</strong></h3><br>
+  <% end %>
 
-</nav>
+</section>

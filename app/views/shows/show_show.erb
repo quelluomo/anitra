@@ -5,8 +5,17 @@
         <strong><%=@show.title %></strong><br>
         <label>Score:</label>
         <strong><%=@show.score %></strong><br>
-        <label>Status:</label>
-        <strong><%=@show.status %></strong></p>
+        <label>Status:</label><br>
+          <% if @show.status == "watched" %>
+            <a class="button is-small has-background-success">Watched</a>
+          <% elsif @show.status == "progress" %>
+            <a class="button is-small has-background-warning">In Progress</a>
+          <% elsif @show.status == "wishlisted" %>
+            <a class="button is-small has-background-light">In Wishlist</a>
+          <% elsif @show.status == "dropped" %>
+            <a class="button is-small is-inverted has-background-dark has-text-light">Dropped</a>
+          <% end %>
+        </p>
       </div>
       <br>
       <div>
