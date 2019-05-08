@@ -4,7 +4,9 @@
         <P>
         <strong><%=@show.title %></strong><br>
         <label>Score:</label>
-        <strong><%=@show.score %></strong></p>
+        <strong><%=@show.score %></strong><br>
+        <label>Status:</label>
+        <strong><%=@show.status %></strong></p>
       </div>
       <br>
       <div>
@@ -12,29 +14,7 @@
 
           <a class="button has-background-warning" href="/shows/<%=@show.id%>/edit">Edit Anime</a>
 
-          <form method="post" action="/shows/<%=@show.id%>/delete">
-            <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <input class="button has-background-danger" type="submit" value="Delete Anime">
-          </form>
-
         </div>
       </div>
 
 </section>
-
-
-<form action="/shows/<%= @show.id %>" method="POST">
-  <input type="hidden" name="_method" value="PATCH">
-  <input id="watched" type="hidden" name="status" value="watched">
-  <input class="button has-background-danger" type="submit" value="Watched">
-</form>
-
-<form method="post" action="/shows/<%=@show.id%>/progress">
-  <input id="hidden" type="hidden" name="_method" value="progress">
-  <input class="button has-background-danger" type="submit" value="In Progress">
-</form>
-
-<form method="post" action="/shows/<%=@show.id%>/wishlist">
-  <input id="hidden" type="hidden" name="_method" value="watched">
-  <input class="button has-background-danger" type="submit" value="In Wishlist">
-</form>

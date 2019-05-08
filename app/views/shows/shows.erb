@@ -6,11 +6,15 @@
           <p><% @shows.each do |show| %>
           <ul>
             <li><a href="/shows/<%= show.id %>"><strong><%= show.title %></strong></a>
-
-                <a class="button is-small">Watched</a>
-
-              <a class="button is-small" href="/progress">In Progress</a>
-              <a class="button is-small" href="/wishlist">In Wishlist</a>
+                <% if show.status == "watched" %>
+                  <a class="button is-small has-background-success">Watched</a>
+                <% elsif show.status == "progress" %>
+                  <a class="button is-small has-background-warning">In Progress</a>
+                <% elsif show.status == "wishlisted" %>
+                  <a class="button is-small has-background-light">In Wishlist</a>
+                <% elsif show.status == "dropped" %>
+                  <a class="button is-small has-background-dark">Dropped</a>
+                <% end %>
             </li>
 
             <label>Score:</label>
