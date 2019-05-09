@@ -22,9 +22,11 @@
         <div class="buttons">
 
           <a class="button has-background-warning" href="/shows/<%=@show.id%>/edit">Edit Anime</a>
+
           <form method="post" action="/shows/<%=@show.id%>/delete">
             <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <a class="button has-background-danger" href="/shows/<%=@show.id%>/delete" >Delete Anime</a>
+
+            <input class="button has-background-danger" type="submit" value="Delete Anime">
           </form>
 
         </div>
