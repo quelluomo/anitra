@@ -1,8 +1,10 @@
 
 
-
   <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
     <h3 class="is-size-5">Log In</h3><br>
+    <p><% if flash.has?(:message) %>
+      <%= flash[:message] %>
+    <% end %></p><br>
     <form action="/login" method="POST">
     <div class="field">
       <div class="control">

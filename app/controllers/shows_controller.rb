@@ -1,4 +1,7 @@
+require 'rack-flash'
+
 class ShowsController < ApplicationController
+  use Rack::Flash
 
   get '/shows' do
     if logged_in?
@@ -73,6 +76,7 @@ class ShowsController < ApplicationController
         if @show && @show.user == current_user
           @show.delete
         end
+      flash[:message] = "Anime successfully deleted."
       redirect to "/shows"
     else
       redirect to "/login"

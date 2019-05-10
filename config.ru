@@ -6,8 +6,7 @@ require './config/environment'
 
 use Rack::MethodOverride
 
-
-use ShowsController
 use UsersController
+use ShowsController
 
 run ApplicationController
