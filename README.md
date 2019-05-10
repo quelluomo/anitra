@@ -1,6 +1,13 @@
 # anitra
 An Anime Tracker built with Sinatra and ActiveRecord
 
+This application has been built as part of my Flatiron School Sinatra module.
+It focuses mostly on:
+- user login/signup functions
+- database relationships
+- adding/editing/deleting items
+- html/css layout
+
 ## Installation
 
 - Clone the repository onto your machine from the following link:
